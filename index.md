@@ -5,7 +5,8 @@ title: FUN STEAM IDEAS!
 
 {% include tabbed_toc.html %}
 
-<div class="tab-content">
+
+<div id="home-panel">
 
 # Welcome!
 
@@ -13,6 +14,9 @@ title: FUN STEAM IDEAS!
   <source src="media/intro_video_short.mp4" type="video/mp4">
 </video>
 
+</div>
+
+<div class="tab-content">
 ## useful links
 
   ### Boston, MA
