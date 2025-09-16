@@ -39,13 +39,10 @@ title: FUN STEAM IDEAS!
 <div class="tabs">
     <input type="radio" name="tab-group" id="tab1" checked>
     <label for="tab1">Home</label>
-    
     <input type="radio" name="tab-group" id="tab2">
     <label for="tab2">Service</label>
-
     <input type="radio" name="tab-group" id="tab3">
     <label for="tab3">Other Resource</label>
-
     <input type="radio" name="tab-group" id="tab4">
     <label for="tab4">About Us</label>
 </div>
