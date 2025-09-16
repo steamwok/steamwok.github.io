@@ -51,25 +51,26 @@ title: FUN STEAM IDEAS!
 </div>
 
 <div class="tab-content">
-  <div class="tab-panel" id="panel1">
+  <div class="tab-panel" id="tab1">
     ## Welcome!
     <video width="720" height="405" controls muted="" autoplay="" loop="false">
     <source src="media/intro_video_short.mp4" type="video/mp4">
     </video>
   </div>
 
-  <div class="tab-panel" id="panel2">
+  <div class="tab-panel" id="tab2">
     ## Service
+      subscribe to our newsletter!
   </div>
 
-  <div class="tab-panel" id="panel3">
+  <div class="tab-panel" id="tab3">
     ## Other Resource
       ### Boston, MA
       ### Minneapolis, MN
       ### Dallas, TX
   </div>
 
-  <div class="tab-panel" id="panel4">
+  <div class="tab-panel" id="tab4">
     ## about us
     We are a team of parents, teachers and software engineers. 
   </div>
