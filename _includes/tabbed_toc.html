@@ -1,11 +1,11 @@
 <style>
-/* Basic CSS for the tabbed interface */
+/* Basic styling for the tabbed interface */
 .tab-container { display: flex; flex-direction: column; }
 .tabs { display: flex; border-bottom: 2px solid #ccc; }
 .tab-title { padding: 10px 15px; cursor: pointer; border-bottom: 2px solid transparent; transition: border-color 0.3s ease; }
 .tab-title.active { border-bottom-color: #007bff; }
-.tab-content > div { display: none; }
-.tab-content > div.active { display: block; }
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
 </style>
 
 <div class="tab-container">
@@ -21,48 +21,47 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const tabsContainer = document.getElementById('toc-tabs');
-    const homePanel = document.getElementById('home-panel');
-    const tabbedContent = document.getElementById('tabbed-content');
+    const contentContainer = document.getElementById('toc-content');
 
-    // Check if the required elements exist
-    if (!tabsContainer || !homePanel || !tabbedContent) {
+    if (!tabsContainer || !contentContainer) {
       return;
     }
     
-    // Get all sections from the tabbed content area
-    const sections = tabbedContent.querySelectorAll('h2, h3');
+    // This finds all direct child elements of the main content div
+    const sections = contentContainer.querySelectorAll('h2, h3');
     
+    // Now, create the tab panels
     sections.forEach((section, index) => {
-        // Create a tab for each section
         const tab = document.createElement('div');
         tab.className = 'tab-title';
         tab.textContent = section.textContent;
-        tab.dataset.target = `tab-panel-${index}`;
+        tab.dataset.target = 'tab-panel-' + index;
         tabsContainer.appendChild(tab);
 
-        // Create a content panel for each section
+        // This is the new logic to create the content panel
         const panel = document.createElement('div');
-        panel.id = `tab-panel-${index}`;
+        panel.id = 'tab-panel-' + index;
         panel.className = 'tab-panel';
-        
-        // Move content from the main page into the new panel
+
+        // Move all content from the main page into the new panel
         let nextSibling = section.nextElementSibling;
-        while (nextSibling && nextSibling.tagName !== 'H2' && nextSibling.tagName !== 'H3') {
+        while (nextSibling) {
+            if (nextSibling.tagName === 'H2' || nextSibling.tagName === 'H3') {
+                break;
+            }
             panel.appendChild(nextSibling);
             nextSibling = section.nextElementSibling;
         }
-        homePanel.parentNode.appendChild(panel);
+        contentContainer.parentNode.insertBefore(panel, contentContainer);
     });
 
     // Handle tab clicks
     tabsContainer.addEventListener('click', (event) => {
         const targetTab = event.target.closest('.tab-title');
         if (targetTab) {
-            // Remove 'active' class from all tabs and panels
             document.querySelectorAll('.tab-title').forEach(t => t.classList.remove('active'));
             document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
 
-            // Add 'active' class to the clicked tab and its target panel
             targetTab.classList.add('active');
             const targetPanelId = targetTab.dataset.target;
             document.getElementById(targetPanelId).classList.add('active');
