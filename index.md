@@ -28,10 +28,10 @@ title: FUN STEAM IDEAS!
 }
 
 /* Show the content panel associated with the active tab */
-#tab1:checked ~ .tab-content#panel1,
-#tab2:checked ~ .tab-content#panel2,
-#tab3:checked ~ .tab-content#panel3,
-#tab4:checked ~ .tab-content#panel4 {
+#tab1:checked ~ #panel1,
+#tab2:checked ~ #tab2-panel,
+#tab3:checked ~ #tab3-panel,
+#tab4:checked ~ #tab4-panel {
     display: block;
 }
 </style>
@@ -51,17 +51,17 @@ title: FUN STEAM IDEAS!
             <source src="media/intro_video_short.mp4" type="video/mp4">
         </video>
     </div>
-    <div class="tab-panel" id="tab2">
+    <div class="tab-panel" id="tab2-panel">
         ## Service
         Subscribe to our newsletter!
     </div>
-    <div class="tab-panel" id="tab3">
+    <div class="tab-panel" id="tab3-panel">
         ## Other Resource
           ### Boston, MA
           ### Minneapolis, MN
           ### Dallas, TX
     </div>
-    <div class="tab-panel" id="tab4">
+    <div class="tab-panel" id="tab4-panel">
         ## About us
         We are a team of parents, teachers and software engineers. 
     </div>
