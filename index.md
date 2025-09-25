@@ -46,24 +46,26 @@ title: FUN STEAM IDEAS!
     <input type="radio" name="tab-group" id="tab4">
     <label for="tab4">About Us</label>
     <div class="tab-panel" id="panel1">
-        ## Welcome!
+        <h2> Welcome! </h2> <br /><br />
         <video width="720" height="405" controls muted="" autoplay="" loop="false">
             <source src="media/intro_video_short.mp4" type="video/mp4">
         </video>
     </div>
     <div class="tab-panel" id="tab2-panel">
-        ## Service
+        <h2> Service </h2> <br /><br />
         Subscribe to our newsletter!
     </div>
     <div class="tab-panel" id="tab3-panel">
-        ## Other Resource
-          ### Boston, MA
-          ### Minneapolis, MN
-          ### Dallas, TX
+        <h2> Other Resource </h2> <br /><br />
+          <h3> Boston, MA </h3><br /><br />
+          <h3> Minneapolis, MN </h3><br /><br />
+          <h3> Dallas, TX  </h3><br /><br />
     </div>
     <div class="tab-panel" id="tab4-panel">
-        ## About us
-        We are a team of parents, teachers and software engineers. 
+        <h2> About us </h2> <br /><br />
+        <p> 
+            We are a team of parents, teachers and software engineers.
+        </p> 
     </div>
     
 </div>
